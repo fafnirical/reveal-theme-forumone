@@ -1,0 +1,19 @@
+{
+  "name": "reveal-theme-forumone",
+  "version": "0.0.0",
+  "description": "The reveal.js theme for Forum One",
+  "keywords": [
+    "reveal-theme"
+  ],
+  "homepage": "https://github.com/fafnirical/reveal-theme-forumone#readme",
+  "bugs": {
+    "url": "https://github.com/fafnirical/reveal-theme-forumone/issues"
+  },
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fafnirical/reveal-theme-forumone.git"
+  },
+  "private": true
+}
