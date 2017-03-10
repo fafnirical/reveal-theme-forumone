@@ -15,5 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/fafnirical/reveal-theme-forumone.git"
   },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
   "private": true
 }
