@@ -4,9 +4,49 @@
  * By Forum One, https://forumone.com/
  */
 
-// Default mixins and settings
+/* Default mixins and settings */
 @import 'reveal.js/css/theme/template/mixins';
 @import 'reveal.js/css/theme/template/settings';
 
-// Theme template
+/* Override theme settings (see reveal.js/css/theme/template/settings.scss) */
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i|Source+Sans+Pro:300,600');
+
+// Background of the presentation
+$backgroundColor: #ffffff;
+
+// Primary/body text
+$mainFont: 'Source Sans Pro', sans-serif;
+$mainFontSize: 12pt * 2.5;
+$mainColor: #63666a;
+
+// Vertical spacing between blocks of text
+$blockMargin: 16pt;
+
+// Headings
+$headingFont: 'Lora', serif;
+$headingColor: #007681;
+$headingLineHeight: 1.2;
+$headingTextTransform: normal;
+$headingFontWeight: 400;
+
+$heading1Size: 24pt * 2.5;
+$heading2Size: 18pt * 2.5;
+$heading3Size: 12pt * 2.5;
+
+// Links and actions
+$linkColor: #ee2737;
+$linkColorHover: #55585a;
+
+// Text selection
+$selectionBackgroundColor: #1b365d;
+$selectionColor: #ffffff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+  background: $backgroundColor;
+}
+
+/* Theme template */
 @import 'reveal.js/css/theme/template/theme';
