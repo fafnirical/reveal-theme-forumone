@@ -20,6 +20,9 @@
     "semantic-release": "semantic-release pre && semantic-release post",
     "watch": "gulp watch"
   },
+  "release": {
+    "branch": "travis-ci-build"
+  },
   "dependencies": {
     "reveal.js": "^3.4.1"
   },
