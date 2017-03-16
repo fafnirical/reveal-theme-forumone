@@ -21,7 +21,8 @@
     "watch": "gulp watch"
   },
   "release": {
-    "branch": "travis-ci-build"
+    "branch": "travis-ci-build",
+    "getLastRelease": "last-release-git"
   },
   "dependencies": {
     "reveal.js": "^3.4.1"
@@ -30,6 +31,7 @@
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8",
+    "last-release-git": "^0.0.2",
     "semantic-release": "^6.3.2"
   },
   "private": true
