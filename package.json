@@ -21,7 +21,6 @@
     "watch": "gulp watch"
   },
   "release": {
-    "branch": "travis-ci-build",
     "getLastRelease": "last-release-git"
   },
   "dependencies": {
