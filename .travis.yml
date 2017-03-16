@@ -1,15 +1,19 @@
 language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
 node_js:
+  - '7'
   - '6'
   - '4'
-
-script: npm run build
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  on:
-    branch: travis-ci-build
-  target_branch: travis-ci-build-target
-  local_dir: dist
+before_script:
+  - npm prune
+script:
+  - npm run build
+after_success:
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

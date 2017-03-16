@@ -1,6 +1,6 @@
 {
   "name": "reveal-theme-forumone",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "The reveal.js theme for Forum One",
   "keywords": [
     "reveal-theme"
@@ -13,10 +13,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fafnirical/reveal-theme-forumone.git"
+    "url": "https://github.com/fafnirical/reveal-theme-forumone.git"
   },
   "scripts": {
     "build": "gulp build",
+    "semantic-release": "semantic-release pre && semantic-release post",
     "watch": "gulp watch"
   },
   "dependencies": {
@@ -25,7 +26,8 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
-    "gulp-sass-glob": "^1.0.8"
+    "gulp-sass-glob": "^1.0.8",
+    "semantic-release": "^6.3.2"
   },
   "private": true
 }
