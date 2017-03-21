@@ -9,6 +9,10 @@ const glob = require('glob');
 const log = require('npmlog');
 const parseSlug = require('parse-github-repo-url');
 
+const globConfig = {
+  nodir: true,
+};
+
 const pkg = JSON.parse(fs.readFileSync('./package.json'));
 const env = process.env;
 
@@ -17,11 +21,10 @@ const config = Object.assign({},
     assetFolder: 'dist',
     debug: !env.CI,
     githubToken: env.GH_TOKEN || env.GITHUB_TOKEN,
-    githubUrl: env.GH_URL,
+    githubUrl: env.GH_URL || pkg.repository.url,
   },
   pkg.release
 );
-
 const ghConfig = config.githubUrl ? url.parse(config.githubUrl) : {};
 
 const github = new GitHubApi({
@@ -43,8 +46,6 @@ const release = {
   repo: ghRepo[1],
 };
 
-console.log(config, ghConfig, ghRepo, release);
-
 github.repos.getLatestRelease(release, (latestReleaseError, response) => {
   if (latestReleaseError) {
     log.error('pre', 'Failed to determine latest release.', latestReleaseError);
@@ -58,7 +59,7 @@ github.repos.getLatestRelease(release, (latestReleaseError, response) => {
     }
   );
 
-  glob(`${config.assetFolder}/**/*`, (globError, matches) => {
+  glob(`${config.assetFolder}/**/*`, globConfig, (globError, matches) => {
     if (globError) {
       log.error('glob', 'Failed to find assets to upload.', globError);
       process.exit(1);
