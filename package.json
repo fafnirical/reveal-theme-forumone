@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build": "gulp build",
-    "semantic-release": "semantic-release pre && git add --force dist/ && semantic-release post",
+    "semantic-release": "semantic-release pre && git add --force dist/ && git commit -m \"release\" && semantic-release post",
     "watch": "gulp watch"
   },
   "dependencies": {
