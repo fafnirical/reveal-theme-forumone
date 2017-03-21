@@ -17,17 +17,22 @@
   },
   "scripts": {
     "build": "gulp build",
-    "semantic-release": "semantic-release pre && git add --force dist/ && git commit -m \"release\" && semantic-release post",
+    "release-assets": "node scripts/release-assets.js",
+    "semantic-release": "semantic-release pre && semantic-release post && npm run release-assets",
     "watch": "gulp watch"
   },
   "dependencies": {
     "reveal.js": "^3.4.1"
   },
   "devDependencies": {
+    "github": "^9.2.0",
+    "glob": "^7.1.1",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8",
     "last-release-git": "^0.0.2",
+    "npmlog": "^4.0.2",
+    "parse-github-repo-url": "^1.4.0",
     "semantic-release": "^6.3.2"
   },
   "private": true,
