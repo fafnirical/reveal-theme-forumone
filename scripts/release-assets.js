@@ -43,6 +43,8 @@ const release = {
   repo: ghRepo[1],
 };
 
+console.log(config, ghConfig, ghRepo, release);
+
 github.repos.getLatestRelease(release, (latestReleaseError, response) => {
   if (latestReleaseError) {
     log.error('pre', 'Failed to determine latest release.', latestReleaseError);
