@@ -21,7 +21,7 @@ const config = Object.assign({},
     assetFolder: 'dist',
     debug: !env.CI,
     githubToken: env.GH_TOKEN || env.GITHUB_TOKEN,
-    githubUrl: env.GH_URL || pkg.repository.url,
+    githubUrl: env.GH_URL,
   },
   pkg.release
 );
