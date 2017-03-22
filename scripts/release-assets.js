@@ -58,6 +58,8 @@ github.repos.getLatestRelease(release, (latestReleaseError, response) => {
       id: response.id,
     }
   );
+  console.dir(response);
+  console.dir(latestRelease);
 
   glob(`${config.assetFolder}/**/*`, globConfig, (globError, matches) => {
     if (globError) {
