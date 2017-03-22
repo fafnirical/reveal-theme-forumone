@@ -55,7 +55,7 @@ github.repos.getLatestRelease(release, (latestReleaseError, response) => {
   const latestRelease = Object.assign({},
     release,
     {
-      id: response.id,
+      id: response.data.id,
     }
   );
   console.dir(response);
