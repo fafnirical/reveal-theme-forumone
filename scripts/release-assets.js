@@ -58,8 +58,6 @@ github.repos.getLatestRelease(release, (latestReleaseError, response) => {
       id: response.data.id,
     }
   );
-  console.dir(response);
-  console.dir(latestRelease);
 
   glob(`${config.assetFolder}/**/*`, globConfig, (globError, matches) => {
     if (globError) {
@@ -70,8 +68,8 @@ github.repos.getLatestRelease(release, (latestReleaseError, response) => {
     matches.forEach((filePath) => {
       const asset = Object.assign({},
         latestRelease,
-        filePath,
         {
+          filePath,
           name: path.basename(filePath),
         }
       );
