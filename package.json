@@ -1,6 +1,6 @@
 {
   "name": "reveal-theme-forumone",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "The reveal.js theme for Forum One",
   "keywords": [
     "reveal-theme"
@@ -17,8 +17,8 @@
   },
   "scripts": {
     "build": "gulp build",
-    "release-assets": "node scripts/release-assets.js",
-    "semantic-release": "semantic-release pre && semantic-release post && npm run release-assets",
+    "prerelease": "npm run build",
+    "release": "git add --force dist/ && standard-version --commit-all",
     "watch": "gulp watch"
   },
   "dependencies": {
@@ -26,18 +26,10 @@
   },
   "devDependencies": {
     "github": "^9.2.0",
-    "glob": "^7.1.1",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8",
-    "last-release-git": "^0.0.2",
-    "npmlog": "^4.0.2",
-    "parse-github-repo-url": "^1.4.0",
-    "semantic-release": "^6.3.2"
+    "standard-version": "^4.0.0"
   },
-  "private": true,
-  "release": {
-    "branch": "travis-ci-build",
-    "getLastRelease": "last-release-git"
-  }
+  "private": true
 }
